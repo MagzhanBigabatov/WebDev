@@ -6,64 +6,62 @@
         <style>
         body{
             border:10px solid rgb(200, 100 , 0);
-            margin:0px;
-            padding:10px;
+            margin: 0px;
+            padding:100px;
             background-color:rgb(250, 150 , 0);
             color:rgb(2000, 240 , 0);
             font-family:sans-serif;
         }
         .invite{
             position: absolute;
-                top:10px;
-                left:130px;
-                z-index: 2;
+            top:10px;
+            left:44%;
+            z-index: 2;
                 
         }
         .birthday{
             position:absolute;
-                top:55px;
-                left:146px;
+            top:55px;
+            left:45%;
         }
-        .details{
-             float:right;
-             width: 250px;
+        .box{
+            left: 35%;
         }
-        .guests{
-             float:left;
-             
-
+        .box1 {
+            right: 35%;
         }
         .korobka{
+            top: 20%;
+            position: absolute;
             border:10px solid rgb(0, 100 , 160);
             margin:0px;
             padding:10px;
-            box-sizing: border-box;
+            width: 200px;
+            height: 150px;
             background-color:rgb(0, 150 , 180);
         }
-        .korobka2{
+        .icome{
+            top: 50%;
             border:4px solid rgb(0, 100 , 100);
-            margin:0px;
+            margin:15px;
             padding:10px;
-            box-sizing: border-box;
+            width: 100px;
             background-color:rgb(0, 150 , 0);
-            color:rgb(100, 240 , 100);
+            color:black;
+            position: absolute;
+            left: 43%;
             
         }
-        .icome{
-            position: absolute;
-                top:340px;
-                left:120px;
-        }
         .icant{
-                position: absolute;
-                top:340px;
-                left:240px;
-                 border:4px solid rgb(90, 0, 0);
-            margin:0px;
+            top: 50%;
+            border:4px solid rgb(0, 100 , 100);
+            margin:15px;
             padding:10px;
-            box-sizing: border-box;
-            background-color:rgb(180, 0 , 0);
-            color:rgb(250, 100 , 0);
+            width: 100px;
+            background-color:rgb(150, 0, 0);
+            color:black;
+            position: absolute;
+            right: 43%
         }
         
         
@@ -73,7 +71,7 @@
         <h1 class= "invite">You're invited!</h1>
         <h2 class="birthday">To my birthday!</h2>
         <br><br><br><br><br>
-        <div class = "guests korobka">
+        <div class = "korobka box ">
         <p>Guests:</p>
         <ul>
             <li>Ibray bosym</li>
@@ -83,7 +81,7 @@
             <li>Jony</li>
         </ul>
         </div>
-        <div class = "details korobka">
+        <div class = "korobka box1">
         <p>Details:</p>
         <ul>
             <li>Meeting point:MyRoom</li>
@@ -93,8 +91,9 @@
         </ul>
         </div>
         <br><br><br><br><br><br><br><br><br><br><br>
-        <button class="korobka2 icome">I come</button>
-        <button class="korobka2 icant">I can't</button>
+        <button class="icome">I come</button>
+        <button class="icant">I can't</button>
         <br><br><br><br><br>
+
     </body>
 </html>
