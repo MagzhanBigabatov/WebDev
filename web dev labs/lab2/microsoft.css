@@ -1,0 +1,141 @@
+.lenta{
+    width: 100%;
+    height: 55px;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.microsoft_logo{
+    width: 108px;
+    height: 23px;
+    
+}
+.logo_ssylka{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 137px;
+    height: 54px;
+}
+.left_lenta{
+    position: absolute;
+    float:left;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    left: 64px;
+    
+    height: 100%;
+}
+.right_lenta{
+    float:right;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    position: absolute;
+    right: 64px;
+}
+.footer_text{
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 20px;
+    color: #262626;
+}
+
+.footer_text:hover{
+    border-bottom: 2px solid #262626;
+    margin-top: 2px;
+}
+.search_img{
+    height: 27px;
+    float:right;
+    margin-top: -3px;
+}
+.strelka{
+    height: 8px;
+    margin-left: 7px;
+    margin-top: 5px;
+}
+.entry_img{
+    height: 25px;
+    margin-left: 15px;
+}
+.background_logo{
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 20px;
+    margin-left: 30px;
+    height: 700px;
+    width: 1850px;
+    background-image: url(https://officegrip.nl/app/uploads/2023/10/Microsoft-licenties-bedrijven.png);
+}
+.lower_part{
+    
+
+    margin-bottom: 25px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+}
+.MC_teams{
+    width: 19%;
+    height: 450px;
+
+    margin-right: 35px;
+    float: left;
+}
+.MC_teams img{
+    width: 100%;
+
+}
+.MC_win{
+    width: 20%;
+    height: 450px;
+
+    float: left;
+}
+.MC_win img{
+    width: 100%;
+}
+.text{
+    color: blue;
+}
+.text img{
+    width: 8px;
+}
+.dliaknopok{
+    width: 100%;
+    height: 300px;
+    display: inline;
+}
+.dlia6{
+    background-color: black;
+    color:white;
+    width: 170px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dlia6 img{
+    width: 15px;
+}
+.logo_text{
+    margin-left: 200px;
+    text-align: left;
+    width: 550px;
+}
