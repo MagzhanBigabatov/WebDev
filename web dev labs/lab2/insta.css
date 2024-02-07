@@ -1,5 +1,6 @@
 body{
     background-color: RGB(250,250,250);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .big_box{
     padding-top: 50px;
@@ -54,7 +55,6 @@ body{
     margin-top: 15px;
     width: 350px;
     font-size: 14px;
-    font-family: Arial;
     
     display: flex;
     justify-content: center;
@@ -69,9 +69,8 @@ body{
     align-items: center;
 }
 .reg_text{
-    margin-top: 22px;
+    margin-top: 23px;
     font-size: 14px;
-    font-family: Arial;
 }
 input:focus{
     width: 262px;
@@ -81,7 +80,6 @@ input:focus{
     border: 1px solid darkgrey;
     background-color: #fafafa;
     color: black;
-    font-family: Arial;
     font-size: 12px;
     padding-left: 8px;
     outline: none;
@@ -98,7 +96,6 @@ input:NOT(:focus){
     border: 1px solid darkgrey;
     background-color: #fafafa;
     color: black;
-    font-family: Arial;
     font-size: 12px;
     padding-left: 8px;
     outline: none;
@@ -116,7 +113,6 @@ input:NOT(:focus){
     background-color: RGB(88,159,211);
     border: 0px;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
 }
@@ -128,17 +124,17 @@ input:NOT(:focus){
     display: flex;
     width: 270px;
     margin: 15px;
+    color: #737373;
+
 }
 .line hr{
     
     width: 100px;
     height: 1%;
-    background-color: lightgrey;
+    background-color: #737373;
 }
 .line span{
     font-size: 14px;
-    font-family: Arial;
-    color: darkgray;
 
 }
 .line1{
@@ -157,37 +153,30 @@ input:NOT(:focus){
 .line1 a{
     color: blue; 
     font-size: 16px;
-    font-family: Arial;
     text-decoration: none;
     
 }
 .line a{
     color: blue; 
     font-size: 16px;
-    font-family: Arial;
 }
 
 .footer_text{
-    position: fixed;
+    margin-top: 80px;
     bottom: 0;
     width: 80%;
     
-    margin-left: 150px;
     flex-direction: column;
-    margin-bottom: 40px;
-
-    font-family: Arial;
     font-size: 13px;
-    color: darkgrey;
+    
 }
 .footer_text a{
-    color: darkgrey;
-    margin-left: 20px;
+    color: RGB( 28,28,28);
+    margin-left: 10px;
     text-decoration: none;
 }
 .text1{
-    font-size: 16px; 
-    font-family: Arial;
+    font-size: 12px; 
     color: black;
     text-decoration: none;
 }

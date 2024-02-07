@@ -1,0 +1,187 @@
+body {
+    background-color: #fff;
+}
+.facebook_and_login{
+    background-color:rgb(240,242,245);
+    width: 100%;
+    height: 720px;
+}
+.box_facebook img {
+    width: 350px;
+    margin:0px;
+    margin-top: 150px;
+}
+.box_facebook p{
+    font-size: 28px;
+    width:460px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 25px;
+    margin-top: -10px;
+}
+.box_facebook{
+    padding-left: 20px;
+    width: 500px;
+    margin-left: 45%;
+    right: 0px;
+}
+.box_log_in{
+    float: right;
+    width: 50%;
+    height: 500px;
+    display: flex;
+    margin-top: 20px;
+    float: left;
+    
+}
+.mega_box_facebook{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    float: left;
+}
+.real_log_in{
+    background-color: #fff;
+    width: 396px;
+    height: 348px;
+    padding-top: 10px;
+    margin-top: 100px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    box-shadow:
+    0 5px 5px -5px rgba(0, 0, 0, 0.3), /* Тень снизу */
+    0 -5px 5px -5px rgba(0, 0, 0, 0.1), /* Тень сверху */
+    5px 0 5px -5px rgba(0, 0, 0, 0.3), /* Тень справа */
+    -5px 0 5px -5px rgba(0, 0, 0, 0.3); /* Тень слева */;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 11%;
+
+}
+input:not(:focus){
+    width: 350px;
+    height: 51.6px;
+    margin: 6px;
+    border: 1px solid rgb(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding-left: 14px;
+    font-size: 17px;
+}
+input:focus{
+    outline: none;
+    width: 350px;
+    height: 51.6px;
+    margin: 6px;
+    border: 1px solid rgb(0, 150, 250);
+    border-radius: 5px;
+    padding-left: 14px;
+    font-size: 17px;
+    box-shadow:
+    0 5px 5px -5px rgba(0, 0, 0, 0.3), /* Тень снизу */
+    0 -5px 5px -5px rgba(0, 0, 0, 0.1), /* Тень сверху */
+    5px 0 5px -5px rgba(0, 0, 0, 0.3), /* Тень справа */
+    -5px 0 5px -5px rgba(0, 0, 0, 0.3); /* Тень слева */;
+}
+.entry{
+    width: 364px;
+    height: 48px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: rgb(24,119,242);
+    color:#fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+.text1{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #1877F2;
+}
+.text1:hover{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-decoration: underline;
+}
+.line{
+    height: 0.8px;
+    width: 364px;
+    background-color: rgb(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+.new_acc{
+    width: 231.41px;
+    height: 48px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #43B72A;
+    color:#fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    transition: background-color 0.3s;
+}
+.new_acc:hover{
+    background-color: #3a9825;
+    transition: background-color 0.3s;
+}
+.new_page{
+    margin-top: 45px;
+    width: 396px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    float: left;
+}
+.hrefnasos{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.footer{
+    padding-top: 20px;
+    width: 100%;
+    height: 175;
+}
+.footer_text{
+    width: 980px;
+    height: 155px;
+    text-align: left;
+}
+.language{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    word-spacing: 6px;
+    color: rgb(0, 0, 0, 0.5);
+}
+.lineforfoot{
+    height: 0.8px;
+    width: 1000px;
+    background-color: rgb(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-bottom:10px; 
+}
+.other{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    word-spacing: 15px;
+    color: rgb(0, 0, 0, 0.5);
+}
+.footer_text a{
+    word-spacing: 3px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0, 0.5);
+}
+.mnogosilok:hover{
+    word-spacing: 1px;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0, 0.5);
+}
