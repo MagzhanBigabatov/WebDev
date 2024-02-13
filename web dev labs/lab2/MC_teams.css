@@ -1,0 +1,240 @@
+.lenta{
+    width: 100%;
+    height: 55px;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.microsoft_logo{
+    width: 108px;
+    height: 23px;
+    
+}
+.logo_ssylka{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 137px;
+    height: 54px;
+}
+.left_lenta{
+    position: absolute;
+    float:left;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    left: 64px;
+    
+    height: 100%;
+}
+.right_lenta{
+    float:right;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    position: absolute;
+    right: 64px;
+}
+.footer_text{
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 20px;
+    color: #262626;
+}
+
+.footer_text:hover{
+    border-bottom: 2px solid #262626;
+    margin-top: 2px;
+}
+.search_img{
+    height: 27px;
+    float:right;
+    margin-top: -3px;
+}
+.strelka{
+    height: 8px;
+    margin-left: 7px;
+    margin-top: 5px;
+}
+.entry_img{
+    height: 25px;
+    margin-left: 15px;
+}
+.background_logo{
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 20px;
+    margin-left: 30px;
+    height: 700px;
+    width: 1850px;
+    background-size: cover;
+    background-image: url(https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Hero-Teamsv2?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3596&hei=1782&qlt=95&fit=constrain);
+}
+.lower_part{
+    
+
+    margin-bottom: 25px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+}
+.MC_teams{
+    width: 19%;
+    height: 350px;
+
+    margin-right: 35px;
+
+    box-shadow:
+    0 5px 5px -5px rgba(0, 0, 0, 0.3), /* Тень снизу */
+    0 -5px 5px -5px rgba(0, 0, 0, 0.3), /* Тень сверху */
+    5px 0 5px -5px rgba(0, 0, 0, 0.3), /* Тень справа */
+    -5px 0 5px -5px rgba(0, 0, 0, 0.3); /* Тень слева */;
+}
+.MC_teams img{
+    width: 100%;
+
+}
+.MC_win{
+    width: 20%;
+    height: 350px;
+
+    box-shadow:
+    0 10px 10px -10px rgba(0, 0, 0, 0.5), /* Тень снизу */
+    0 -10px 10px -10px rgba(0, 0, 0, 0.3), /* Тень сверху */
+    10px 0 10px -10px rgba(0, 0, 0, 0.5), /* Тень справа */
+    -10px 0 5px -10px rgba(0, 0, 0, 0.3); /* Тень слева */;
+}
+.MC_win img{
+    width: 100%;
+}
+.text{
+    color: blue;
+}
+.text img{
+    width: 8px;
+}
+.dliaknopok{
+    width: 100%;
+    max-height: 40px;
+    display: flex; 
+
+}
+.dlia6{
+    margin-bottom: 15px;
+    border: 1px solid blue;
+    background-color: white;
+
+    width: 170px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dlia6 p{
+    margin: 0;
+}
+
+.logo_text{
+    margin-left: 200px;
+    text-align: left;
+    width: 460px;
+}
+.logo_text h1{
+    font-size: 50px;
+    color: black;
+}
+.logo_text p{
+    font-size: 18px;
+    color: black;
+}
+.test{
+    font-size: 19px;
+    display: flex;
+    color: blue;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+.test img{
+    margin-left: 2px;
+    width: 11px;
+}
+.ver_line{
+    width: 2px;
+    height: 24px;
+    background-color: black;
+    margin-right: 7px;
+}
+.Teams{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+.sign{
+    width: 65px;
+    height: 30px;
+    border: 1px solid blue;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign a{
+    color: blue;   
+    font-size: 14px;
+    font-weight: lighter;
+}
+.down{
+    color: blue;
+    font-size: 13px;
+    margin-right: 10px;
+}
+.text5 div{
+    width: 650px;
+    
+    align-items: center;
+    justify-content: center;
+    
+}
+.text5{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.new_line{
+    margin-left: 5px;
+    width: 97%;
+    color: white;
+    border: 1px solid blue;
+    background-color: #5d5bd4;
+
+    font-size: 16px;
+    font-weight: bold;
+
+
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+}
+
