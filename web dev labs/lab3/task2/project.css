@@ -31,21 +31,23 @@ input::placeholder {
 }
 .Box {
     width: 100%;
-    margin-left: 30%;
     display: inline;
     flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .Box .test {
-    width: 55%;
+    width: 35%;
     height: 65px;
     border-radius: 15px;
     border: 1px solid lightgray;
-    font-size: 17px;
     margin-right: 10px;
     margin-bottom: 10px;
     display: flex; 
     align-items: center;
+    
 }
 .Box input{
     margin-left: 10px;
@@ -53,17 +55,23 @@ input::placeholder {
 .Box .test p {
     flex-grow: 1;
     margin-left: 10px;
+    margin-right: 10px;
     left: 10px;
-
+    max-width: 650px;
+    max-height: 50px;
+    overflow-x: auto;
+    overflow-y: auto;
+    font-size: 20px;
 }
 .Box img {
     width: 18px;
-    margin-right: 10px;
+    margin-right: 15px;
+    
 }
 .header {
     width: 100%;
     height: 60px;
-    background-color: black;
+    background-color: blue;
     margin-bottom: 25px;
     color: white;
     display: flex;
@@ -71,17 +79,11 @@ input::placeholder {
 }
 .header p {
     margin-left: 15%;
-    font-size: 25px;
+    font-size: 35px;
 }
 h1 {
     margin-left: 25%;
     font-weight: bold;
-}
-.Out_box{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .line{
     text-decoration: line-through;
