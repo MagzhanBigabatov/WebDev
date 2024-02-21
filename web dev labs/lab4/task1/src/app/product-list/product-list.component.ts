@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { products } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,6 +10,7 @@ import { products } from '../products';
 })
 export class ProductListComponent {
   products = products;
+  carts = CartService;
 
   share(name: string, url: string | undefined) {
     window.open(`https://t.me/share/url?url=${url}&text=${name}`)
