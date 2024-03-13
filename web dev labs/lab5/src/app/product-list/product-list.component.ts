@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {categories} from '../categories';
-import { products } from '../products';
-
+import { Product } from '../products';
 
 @Component({
   selector: 'app-product-list',
@@ -9,7 +8,6 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products = [...products];
   categories = [...categories];
 
 
@@ -20,7 +18,25 @@ export class ProductListComponent {
   onNotify() {
     window.alert('You will be notified when the product');
   }
-}
+
+  del_but(){
+    const hideButton = document.getElementById('hideButton');
+    const elementToHide = document.getElementById('elementToHide');
+
+    if (hideButton && elementToHide) {
+      hideButton.addEventListener('click', () => {
+    
+        elementToHide.style.display = 'none';
+      });
+    }
+  }
+  del_button(pro: Product, pro1:Product[]){
+    const i = pro1.findIndex(p=> p.id === pro.id)
+    if(i !==-1){
+      pro1.splice(i,1);
+    }
+  }
+}   
 
 
 /*

@@ -1,0 +1,22 @@
+.ADD{
+    margin-bottom: 15px;
+    align-items: center;
+}
+.DEL{
+    margin-left: 80px;
+}
+.text{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.Album{
+    width: 60%;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid black;
+    margin-bottom: 15px;
+}

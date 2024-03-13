@@ -9,7 +9,7 @@ export interface Product {
   category: string
 }
 
-export const products = []
+
 
 
 

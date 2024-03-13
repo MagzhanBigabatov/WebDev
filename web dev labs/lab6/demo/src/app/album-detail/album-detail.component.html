@@ -1,0 +1,14 @@
+
+<div *ngIf="loaded; else loading">
+<div *ngIf="album">
+    <h1>{{album.id}}</h1>
+    <h3>{{album.title}}</h3>
+    <!-- <br>
+    <p>{{album.body}}</p> -->
+</div>
+</div>
+
+
+<ng-template #loading>
+    <p>Album details loading...</p>
+</ng-template>

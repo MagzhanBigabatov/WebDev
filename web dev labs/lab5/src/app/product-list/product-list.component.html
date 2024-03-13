@@ -4,7 +4,7 @@
     
     <div *ngIf = "categ.show_products" >
         <h2>Товары</h2>
-        <div *ngFor = "let product of categ.products" >
+        <div *ngFor = "let product of categ.products" id="{{product.id}}{{product.category}}">
             
                 <h3>
                     <a href={{product.link}} [title] = "product.name + ' details' "> {{product.name}} 
@@ -22,7 +22,7 @@
                 <button type="button" (click) = "share(product.link)">
                     Share
                 </button>
-                
+                <button type="button" id="{{product.id}}{{product.category}}" (click)="del_button(product, categ.products )">DEL</button>
                 
                 <app-product-alerts></app-product-alerts>
 
