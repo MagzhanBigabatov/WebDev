@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Albums_detail } from './module';
+import { Albums_detail, Photo } from './module';
 import { Album } from './module';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class AlbumsService {
   }
 
   getAlbums1Id(id: number): Observable<Albums_detail> {
-    return this.client.get<Albums_detail>(`https://jsonplaceholder.typicode.com/albums/${id}`);
+    return this.client.get<Albums_detail>(`https://jsonplaceholder.typicode.com/albums/${id}/`);
   }
 
   addAlbums(newAlbum: Album): Observable<Album> {
@@ -30,5 +30,13 @@ export class AlbumsService {
 
   deleteAlbums(id: number): Observable<any> {
     return this.client.delete(`https://jsonplaceholder.typicode.com/albums/${id}`);
+  }
+
+  getAlbumPhotos(id: number): Observable<any> {
+    return this.client.get(`https://jsonplaceholder.typicode.com/albums/${id}/photos`);
+  }
+
+  updateAlbum(id: number, updatedAlbum: Album): Observable<Album> {
+    return this.client.put<Album>(`https://jsonplaceholder.typicode.com/albums/${id}`, updatedAlbum);
   }
 }

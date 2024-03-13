@@ -1,18 +1,17 @@
 <div *ngIf="loaded; else loading">
-<h1>Albums</h1>
-<br>
-<div class="ADD">
-    <fieldset>
-        <input type="text" [(ngModel)]="newAlbums.title"; >
-        <button (click)="AddAlbums()">ADD</button>
-    </fieldset>
+    <h1>Albums</h1>
+    <br>
+    <div class="ADD">
+        <fieldset>
+            <input type="text" [(ngModel)]="newAlbums.title">
+            <button (click)="AddAlbums()">ADD</button>
+        </fieldset>
+    </div>
+    <div *ngFor="let album of Albums" class="Album">
+        <a [routerLink]="'/albums/' + album.id" class="text">{{ album.id }} {{ album.title }}</a>
+        <button (click)="deleteBut(album.id)" class="DEL">DEL</button>
+    </div>
 </div>
-<div *ngFor="let album of Albums" class="Album">
-    <a [routerLink] = "['/albums', album.id]" class="text"> {{album.id}} {{album.title}} </a>
-    <button (click)="deleteBut(album.id)" class="DEL">DEL</button>
-</div>
-</div>
-
 
 <ng-template #loading>
     <p>Albums loading...</p>

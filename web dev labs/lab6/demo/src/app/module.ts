@@ -10,3 +10,11 @@ export interface Albums_detail{
     title: string;
     body: string;
 }
+
+export interface Photo{
+    albumId: number;
+    id: number;
+    title: string;
+    url: string;
+    thumbnailUrl: string
+}

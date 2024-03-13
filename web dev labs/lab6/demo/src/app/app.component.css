@@ -11,8 +11,17 @@ header{
 
     display: flex;
     align-items: center;
+    
 }
 
 .left_part a{
+    color: black;
     margin-left: 15px;
+    text-decoration: none;
+}
+
+.left_part p{
+    color: blue;
+    margin-left: 15px;
+    margin-right: 100px;
 }

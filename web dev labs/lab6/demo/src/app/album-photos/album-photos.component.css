@@ -1,0 +1,32 @@
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    width: 80%; 
+  }
+
+  .back-button {
+    text-decoration: none;
+    background-color: white;
+    padding: 5px;
+    width: 30px;
+    height: 15px;
+    border: 1px solid black;
+    justify-content: center;
+  }
+  
+  
+  
+  .photo-item {
+    margin-left: 10%; 
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow: hidden;
+    font-size: 140%;
+  }
+  
+  .photo-item img:first-child {
+    width: 100%;
+    object-fit: cover;
+  }
+    

@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Album } from '../module';
-// import { ALBUMS } from '../DB';
 import { CommonModule } from '@angular/common';
 import { AlbumsService } from '../albums.service';
 import { FormsModule } from '@angular/forms';
-import { title } from 'process';
+
 
 @Component({
   selector: 'app-albums',
@@ -19,6 +18,7 @@ export class AlbumsComponent implements OnInit {
   loaded!: boolean;
 
   newAlbums: Album;
+
 
   constructor(private albumsService: AlbumsService, private route: ActivatedRoute){
     this.newAlbums = {
@@ -49,12 +49,14 @@ export class AlbumsComponent implements OnInit {
     });
   }
 
-  AddAlbums():void{
+  AddAlbums(): void {
     this.albumsService.addAlbums(this.newAlbums).subscribe({
-      next: ()=>{
+      next: (album: Album) => {
+        console.log("created");
         this.Albums.push(album);
+        this.newAlbums = {} as Album;
       }
-    })
+    });
   }
 
 }

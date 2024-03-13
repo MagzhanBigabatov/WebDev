@@ -1,11 +1,21 @@
 
 <div *ngIf="loaded; else loading">
+<h4>
+    <a [routerLink]="['/albums']" class="back-button">Back</a>
+</h4>
+
 <div *ngIf="album">
     <h1>{{album.id}}</h1>
     <h3>{{album.title}}</h3>
+    <h3><a [routerLink]="['/albums', album.id, 'photos']" class="photos-link">Photos</a></h3>
     <!-- <br>
     <p>{{album.body}}</p> -->
 </div>
+<fieldset class="update-form">
+    <legend>Update Album</legend>
+    <label for="title">New Title</label>
+    <input type="text" [(ngModel)]="updatedAlbum.title" id="title"  placeholder="Update"> <button (click)="updateAlbum()" class="update-button">Update Album</button>
+</fieldset>
 </div>
 
 

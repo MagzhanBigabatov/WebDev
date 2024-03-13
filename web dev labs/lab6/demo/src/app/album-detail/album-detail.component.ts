@@ -1,45 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterModule } from '@angular/router';
-import { Router } from 'express';
 import { Album, Albums_detail } from '../module';
-import { ALBUMS } from '../Detail_DB';
-import { CommonModule } from '@angular/common';
 import { AlbumsService } from '../albums.service';
-
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-album-detail',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './album-detail.component.html',
-  styleUrl: './album-detail.component.css'
+  styleUrls: ['./album-detail.component.css']
 })
-  
-
-  // constructor(private route: ActivatedRoute) { }
-
-  // ngOnInit(): void {
-  //     this.route.paramMap.subscribe((params: ParamMap): void=>{
-  //       // console.log( params.get('id'));
-
-  //       const AlbumsID: number = Number(params.get('id'));
-  //       this.album = ALBUMS.find((album: Albums_detail) => album.id === AlbumsID) as Albums_detail;
-  //     })
-  // }
-
 export class AlbumDetailComponent implements OnInit {
-    album!: Albums_detail ;
-    loaded: boolean = false;
-  
-    constructor(private route: ActivatedRoute, private albumsService: AlbumsService) { }
-  
-    ngOnInit(): void {
-      this.route.paramMap.subscribe((params: ParamMap) => {
-        const AlbumsID: number = Number(params.get('id'));
-        this.albumsService.getAlbums1Id(AlbumsID).subscribe((album: Albums_detail) => {
-          this.album = album;
-          this.loaded = true;
-        });
+  album!: Album;
+  updatedAlbum!: Album;
+  loaded: boolean = false;
+  isUpdating: boolean = false;
+
+  constructor(private route: ActivatedRoute, private albumService: AlbumsService) { }
+
+  ngOnInit(): void {
+    this.updatedAlbum = { id: 0, userId: 0, title: '' };
+    this.getAlbum();
+  }
+
+  getAlbum() {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const AlbumsID: number = Number(params.get('id'));
+      this.albumService.getAlbums1Id(AlbumsID).subscribe((album:Albums_detail) => {
+        this.album = album;
+        this.loaded = true;
       });
-    }
+    });
+  }
+ 
+
+  updateAlbum() {
+    this.isUpdating = true;
+    this.route.paramMap.subscribe((params) => {
+      const albumId = Number(params.get('id'));
+      this.albumService.updateAlbum(albumId, this.updatedAlbum).subscribe((updatedAlbum) => {
+        this.album = updatedAlbum;
+        this.isUpdating = false;
+        this.updatedAlbum.title = ''; 
+      });
+    });
+  }
 }
