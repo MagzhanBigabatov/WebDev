@@ -33,6 +33,6 @@ def category_detail(request, category_id):
 
 
 def products_by_category(request, category_id):
-    list = Product.objects.filter(id = category_id)
-    product_json = [p.to_json() for p in list]
+    products = Product.objects.filter(category_id=category_id)
+    product_json = [p.to_json() for p in products]
     return JsonResponse(product_json, safe=False)
