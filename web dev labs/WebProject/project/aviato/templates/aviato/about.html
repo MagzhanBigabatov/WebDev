@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+    <header>
+        <div class="left_part">
+            <a href="#" class="logo">Aviato</a>
+            <a href="#" class="header_text">air tickets</a>
+            <a href="#" class="header_text">hotels</a>
+            <a href="{% url 'about' %}">About us</a>
+        </div>
+        <div class="right_part">
+            <a href="{% url 'login' %}" class="header_text">login</a>
+            <p class="header_text">/</p>
+            <a href="{% url 'registration' %}" class="header_text">register</a>
+        </div>
+    </header>
+</body>
+</html>
