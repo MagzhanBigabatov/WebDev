@@ -9,7 +9,7 @@ urlpatterns = [
     path('company/<int:company_id>/vacancy/', views.company_by_vacancy),
 
     # Vacancies
-    path('vacancy/', MyVacancy.as_view()),
+    path('vacancy/', views.MyVacancy),
     path('vacancy/<int:vacancy_id>/', views.vacancy_detail),
     path('vacancy/top_ten/', views.top10_vacancies)
 

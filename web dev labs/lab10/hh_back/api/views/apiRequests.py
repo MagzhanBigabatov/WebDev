@@ -8,7 +8,11 @@ from rest_framework import status
 from api.models import Company, Vacancy
 from api.serializers import CompanySerializer, VacancyModelSerializer
 
+from rest_framework.decorators import api_view
+from django.shortcuts import get_object_or_404
+
 @csrf_exempt
+@api_view(['GET', 'POST'])
 def company_list(request):
     if request.method == 'GET':
         company = Company.objects.all()
@@ -16,7 +20,7 @@ def company_list(request):
         return JsonResponse(serializer_company.data, safe=False)
     if request.method == 'POST':
         data = json.loads(request.body)
-        id = data.get('id')  # Получаем id из данных запроса
+        id = data.get('id')  
         company = Company.objects.create(
             id=id,
             name=data.get('name', ''),
@@ -27,6 +31,7 @@ def company_list(request):
         return JsonResponse(company.to_json())
 
 @csrf_exempt
+@api_view(['GET', 'PUT', 'DELETE'])
 def company_detail(request, company_id):
     try:
         company = Company.objects.get(id=company_id)
@@ -40,8 +45,11 @@ def company_detail(request, company_id):
 
     if request.method == 'PUT':
         data = json.loads(request.body)
+        company.id = data.get('id', company.id)
         company.name = data.get('name', company.name)
         company.city = data.get('city', '')
+        company.description = data.get('description', '')
+        company.address = data.get('address', '')
         company.save()
         return JsonResponse(company.to_json())
 
@@ -50,30 +58,42 @@ def company_detail(request, company_id):
         company.delete()
         return JsonResponse({"deleted": True})
 
+@api_view(['GET', 'POST'])
 def company_by_vacancy(request, company_id):
-    vacancy = Vacancy.objects.filter(company_id=company_id)
-    vacancy_json = [p.to_json() for p in vacancy]
-    return JsonResponse(vacancy_json, safe=False)
+    if request.method == 'GET':
+        vacancies = Vacancy.objects.filter(company_id=company_id)
+        serializer = VacancyModelSerializer(vacancies, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        data = request.data
+        data['company_id'] = company_id
+        serializer = VacancyModelSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-class MyVacancy(APIView):
-    def get(self, request):
+@api_view(['GET', 'POST'])
+def MyVacancy(request):
+    if request.method == 'GET':
         vacancy = Vacancy.objects.all()
         serializer_vacancy = VacancyModelSerializer(vacancy, many=True)
         return Response(serializer_vacancy.data, status=status.HTTP_200_OK)
 
-    def post(self, request):
-        data = json.loads(request.body)
+    if request.method == 'POST':
+        company = Company.objects.filter(id = request.data.get('company_id')).first()
+        print(company)
+        data = request.data
         vacancy = Vacancy.objects.create(
             name=data.get('name', ''),
-            description=data.get('description', ''),
-            salary=data.get('salary', ''),
-            company=data.get('company', '')
+            salary=data.get('salary', 0),
+            company_id= company,
+            raiting=data.get('raiting', 0),
         )
         serializer = VacancyModelSerializer(vacancy)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-
+@api_view(['GET', 'PUT', 'DELETE'])
 def vacancy_detail(request, vacancy_id):
     try:
         vacancy = Vacancy.objects.get(id=vacancy_id)
@@ -87,8 +107,11 @@ def vacancy_detail(request, vacancy_id):
 
     if request.method == 'PUT':
         data = json.loads(request.body)
+        vacancy.id = data.get('name', vacancy.id)
         vacancy.name = data.get('name', vacancy.name)
         vacancy.salary = data.get('salary', '')
+        vacancy.description = data.get('description', '')
+        vacancy.raiting = data.get('raiting', '')
         vacancy.save()
         return JsonResponse(vacancy.to_json())
 
@@ -98,7 +121,10 @@ def vacancy_detail(request, vacancy_id):
         return JsonResponse({"deleted": True})
 
 
+@api_view(['GET'])
 def top10_vacancies(request):
-    top10_vacancy = Vacancy.objects.all().order_by('-raiting')[:10]
-    top10_vacancy_json = [p.to_json() for p in top10_vacancy]
-    return JsonResponse(top10_vacancy_json, safe=False)
+    if request.method == 'GET':
+        top10_vacancy = Vacancy.objects.all().order_by('-raiting')[:10]
+        serializer = VacancyModelSerializer(top10_vacancy, many=True)
+        return Response(serializer.data)
+

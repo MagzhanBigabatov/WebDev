@@ -11,4 +11,4 @@ class CompanySerializer(serializers.Serializer):
 class VacancyModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vacancy
-        fields = ('id', 'name', 'salary', 'company_id')
+        fields = ('id', 'name', 'salary', 'company_id', 'raiting')
