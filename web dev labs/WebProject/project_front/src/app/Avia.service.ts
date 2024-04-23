@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { registr_login } from './module';
+import { registr_login, Ticket } from './module';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
   })
-  export class reg_login {
+  export class Avia {
   
     BASE_URL = 'http://127.0.0.1:8000';
     accounts: registr_login[] = [];
+    tickets: Ticket[]= [];
   
     constructor(private client: HttpClient) { }
   
@@ -36,6 +37,17 @@ import { tap } from 'rxjs/operators';
       const account = this.accounts.find((acc: registr_login) => acc.nickname === nickname && acc.password === password);
       return !!account;
     }
+
+
+
+    //tickets
+    getTicket(): Observable<Ticket[]>{
+      return this.client.get<Ticket[]>(`${this.BASE_URL}/aviato/Tickets/`).pipe(
+        tap(tickets => this.tickets = tickets)
+      );
+    }
+
+    // getTickets_by_id():
   
   }
 

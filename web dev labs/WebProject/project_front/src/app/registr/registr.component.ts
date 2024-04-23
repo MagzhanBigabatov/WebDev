@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { reg_login } from '../reg_login.service';
+import { Avia } from '../Avia.service';
 import { registr_login } from '../module';
 import { Router } from '@angular/router';
 
@@ -18,7 +18,7 @@ export class RegistrComponent {
   newPassword: String = "";
   newPasswordAgain: String = "";
   
-  constructor(private regLoginService: reg_login, private router: Router) {}
+  constructor(private regLoginService: Avia, private router: Router) {}
 
   ngOnInit() : void {
     this.regLoginService.getAccount().subscribe((data: registr_login[]) => {

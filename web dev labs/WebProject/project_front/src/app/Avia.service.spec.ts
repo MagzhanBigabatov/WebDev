@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { CompanyService } from './company.service';
 
-import {  } from "./reg_login.service";
+import {  } from "./Avia.service";
 
 describe('CompanyService', () => {
   let service: CompanyService;

@@ -21,3 +21,16 @@ export interface registr_login{
     password: string;
 }
 
+export interface Ticket {
+    id: number;
+    city1: string;
+    city2: string;
+    cost: number;
+    company: string;
+    depar_date: Date | null;
+    depar_time: string | null;
+    arrival_date: Date | null;
+    arrival_time: string | null;
+    number: number;
+}
+

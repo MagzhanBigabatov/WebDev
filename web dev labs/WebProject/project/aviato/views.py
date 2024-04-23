@@ -5,13 +5,13 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from aviato.models import Account
-from aviato.serializers import  AccountSerializer
+from aviato.models import Account, Tikets
+from aviato.serializers import  AccountSerializer, TicketsSerializer
 
 from rest_framework.decorators import api_view
 from django.shortcuts import get_object_or_404
 
-
+#FBV
 @api_view(['GET', 'POST'])
 def registr_login(request):
     if request.method == 'GET':
@@ -31,6 +31,35 @@ def registr_login(request):
         return JsonResponse(account.to_json())
 
     
+
+class TicketView(APIView):
+    def get(self, request, ID=None):
+        if ID is not None:
+            ticket = Tikets.objects.get(pk=ID)
+            serializer = TicketsSerializer(ticket)
+            return Response(serializer.data)
+        else:
+            ticketSet = Tikets.objects.all()
+            Ticketserialzer = TicketsSerializer(ticketSet, many=True)
+            return Response(Ticketserialzer.data)
+    def post(self, request):
+        Ticserializer = TicketsSerializer(data=request.data)
+        if Ticserializer.is_valid():
+            Ticserializer.save()
+            return Response(Ticserializer.data, status=status.HTTP_201_CREATED)
+        return Response(Ticserializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def put(self, request, ID):
+        ticket = Tikets.objects.get(pk=ID)
+        serializer = TicketsSerializer(ticket, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, ID):
+        ticket = Tikets.objects.get(pk=ID)
+        ticket.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 

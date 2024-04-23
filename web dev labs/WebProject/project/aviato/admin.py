@@ -7,6 +7,6 @@ class AccountAdmin(admin.ModelAdmin):
 
 @admin.register(Tikets)
 class TicketsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'city1', 'city2', 'cost', 'company', 'depar_date', 'depar_time', 'Arrival_date', 'Arrival_time', 'number', 'Acc_id', 'Sec_tic')
+    list_display = ('id', 'city1', 'city2', 'cost', 'company', 'depar_date', 'depar_time', 'Arrival_date', 'Arrival_time', 'number')
 
 # Register your models here.

@@ -30,8 +30,7 @@ class Tikets(models.Model):
     Arrival_date = models.DateField(default=None)
     Arrival_time = models.TimeField(default=None)
     number = models.IntegerField(default=0)
-    Acc_id = models.ForeignKey(Account, on_delete=models.CASCADE, null=True, blank=True)
-    Sec_tic = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
+
 
     def to_json(self):
         return {
@@ -45,12 +44,30 @@ class Tikets(models.Model):
             'Arrival_date': self.Arrival_date,
             'Arrival_time': self.Arrival_time,
             'number': self.number,
-            'Acc_id': self.Acc_id.id if self.Acc_id else None,
-            'Sec_tic': self.Sec_tic.id if self.Sec_tic else None
         }
+    
+class Buy_Ticket(models.Model):
+    Per_id = models.ForeignKey(Account, on_delete=models.CASCADE)
+    Tikets_id = models.ForeignKey(Tikets, on_delete=models.CASCADE)
+
+    def to_json(self):
+        return{
+            'id': self.id,
+            'Per_id': self.Per_id.id,
+            'Tickets_id': self.Tikets_id.id
+        }
+    
+class Hotels(models.Model):
+    pass
+
 
 
     
+    # Acc_id = models.ForeignKey(Account, on_delete=models.CASCADE, null=True, blank=True)
+    # Sec_tic = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
+
+    # Acc_id = models.ForeignKey(Account, on_delete=models.CASCADE, null=True, blank=True)
+    # Sec_tic = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
 
     # Create your models here.
 # class Company(models.Model):

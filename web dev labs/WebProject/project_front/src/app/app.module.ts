@@ -9,6 +9,7 @@ import { CompaniesComponent } from './companies/companies.component';
 import { RegistrComponent } from './registr/registr.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { TicketsComponent } from './tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MainComponent } from './main/main.component';
     CompaniesComponent,
     RegistrComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { MainComponent } from './main/main.component';
     RouterModule.forRoot([
       { path: "", component: MainComponent},
       { path: "Login", component: LoginComponent},
-      { path: "Registration", component: RegistrComponent}
+      { path: "Registration", component: RegistrComponent},
+      { path: 'Tickets', component: TicketsComponent}
     ])
   ],
   providers: [],

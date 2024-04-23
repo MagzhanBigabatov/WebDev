@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { reg_login } from '../reg_login.service';
+import { Avia } from '../Avia.service';
 import { registr_login } from '../module';
 
 @Component({
